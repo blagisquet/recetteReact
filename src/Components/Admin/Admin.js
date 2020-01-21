@@ -32,7 +32,7 @@ class Admin extends Component {
   }
 
   render() {
-    const { recettes, ajouterRecette, majRecette, chargerExample} = this.props;
+    const { recettes, ajouterRecette, majRecette, supprimerRecette, chargerExample} = this.props;
     // Si l'utilisateur n'est pas connecté
     if(!this.state.uid) {
       return <Login authenticate={this.authenticate} />
@@ -56,6 +56,7 @@ class Admin extends Component {
               key={key} 
               id={key} 
               majRecette={majRecette} 
+              supprimerRecette={supprimerRecette}
               recettes={recettes}>
               </AdminForm>)
         }
