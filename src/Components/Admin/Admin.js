@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AjouterRecette from '../AjouterRecette/AjouterRecette';
+import AdminForm from '../AdminForm/AdminForm';
 import Login from '../Login/Login';
 
 import firebase from 'firebase/app';
@@ -31,7 +32,7 @@ class Admin extends Component {
   }
 
   render() {
-
+    const { recettes, ajouterRecette, majRecette, chargerExample} = this.props;
     // Si l'utilisateur n'est pas connecté
     if(!this.state.uid) {
       return <Login authenticate={this.authenticate} />
@@ -47,9 +48,19 @@ class Admin extends Component {
 
     return (
       <div className="cards">
-        <AjouterRecette ajouterRecette={this.props.ajouterRecette} />
+        <AjouterRecette 
+        ajouterRecette={ajouterRecette} />
+        {
+          Object.keys(recettes)
+            .map(key => <AdminForm 
+              key={key} 
+              id={key} 
+              majRecette={majRecette} 
+              recettes={recettes}>
+              </AdminForm>)
+        }
       <footer>
-        <button onClick={this.props.chargerExample}>Remplir</button>
+        <button onClick={chargerExample}>Remplir</button>
       </footer>
       </div>
     )
