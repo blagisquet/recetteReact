@@ -1,3 +1,13 @@
+## Technical stack
+
+This project is made with React, props and state, connected with Firebase for the database.
+
+## Description
+
+You can authenticate to login with Gmail, create, read, update and delete recipe on your profile and only consult recipes of others people. 
+
+## React
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
